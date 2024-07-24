@@ -104,23 +104,15 @@ userRoutes.post("", createUserController);
 userRoutes.get("", ensureAuthMiddleware, listUsersController);
 /**
  * @openapi
- * /user/{id}:
+ * /users/owner:
  *   get:
  *     tags:
  *       - User
- *     summary: Obtém um usuário específico
- *     description: Endpoint para obter detalhes de um usuário específico pelo ID.
- *     parameters:
- *       - name: id
- *         in: path
- *         required: true
- *         description: ID do usuário a ser obtido
- *         schema:
- *           type: string
- *           example: '123456'
+ *     summary: Obtém o usuário proprietário
+ *     description: Endpoint para obter o usuário proprietário do sistema.
  *     responses:
  *       200:
- *         description: Detalhes do usuário.
+ *         description: Detalhes do usuário proprietário.
  *         content:
  *           application/json:
  *             schema:
@@ -142,11 +134,11 @@ userRoutes.get("", ensureAuthMiddleware, listUsersController);
  *                   type: string
  *                   example: '2024-07-24T17:37:18.449Z'
  *       404:
- *         description: Usuário não encontrado.
+ *         description: Usuário proprietário não encontrado.
  *       500:
  *         description: Erro interno do servidor.
  */
-userRoutes.get("/:id", ensureAuthMiddleware, listUserController);
+userRoutes.get("/owner", ensureAuthMiddleware, listUserController);
 /**
  * @openapi
  * /user/{id}:

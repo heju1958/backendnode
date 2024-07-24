@@ -26,7 +26,7 @@ const createUserController = async (req: Request, res: Response) => {
 };
 
 const listUserController = async (req: Request, res: Response) => {
-  const id: string = req.params.id;
+  const id: string = req.user.id;
   const user = await listUserService(id);
   return res.json(instanceToPlain(user));
 };
