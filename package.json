@@ -20,9 +20,11 @@
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
     "@types/jsonwebtoken": "^9.0.6",
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.5.1",
+    "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
     "express": "^4.19.2",
